@@ -1,32 +1,36 @@
 package ru.netology.Radioman;
 
 public class Radio {
-    private int currentChannel;
-    private int maxChannel = 10;
-    private int minChannel = 0;
 
+    private int currentStation;
     private int currentVolume;
+
+    private int maxStation = 10;
+    private int minStation = 0;
     private int maxVolume = 100;
     private int minVolume = 0;
 
-    public Radio(int maxChannel) {
-        this.maxChannel = maxChannel;
+    public Radio() {
     }
 
-    public void increaseCurrentChannel() {
-        if (currentChannel >= maxChannel) {
-            currentChannel = minChannel;
-            return;
-        }
-        currentChannel += 1;
+    public Radio(int maxStation) {
+        this.maxStation = maxStation;
     }
 
-    public void decreaseCurrentChannel() {
-        if (currentChannel <= minChannel) {
-            currentChannel = maxChannel;
+    public void increaseCurrentStation() {
+        if (currentStation >= maxStation) {
+            currentStation = minStation;
             return;
         }
-        currentChannel -= 1;
+        currentStation += 1;
+    }
+
+    public void decreaseCurrentStation() {
+        if (currentStation <= minStation) {
+            currentStation = maxStation;
+            return;
+        }
+        currentStation -= 1;
     }
 
     public void increaseCurrentVolume() {
@@ -45,12 +49,12 @@ public class Radio {
         currentVolume -= 1;
     }
 
-    public int getCurrentChannel() {
-        return currentChannel;
+    public int getCurrentStation() {
+        return currentStation;
     }
 
-    public void setCurrentChannel(int currentChannel) {
-        this.currentChannel = currentChannel;
+    public void setCurrentStation(int currentStation) {
+        this.currentStation = currentStation;
     }
 
     public int getCurrentVolume() {
@@ -59,29 +63,5 @@ public class Radio {
 
     public void setCurrentVolume(int currentVolume) {
         this.currentVolume = currentVolume;
-    }
-
-    public int getMinChannel() {
-        return minChannel;
-    }
-
-    public void setMinChannel(int minChannel) {
-        this.minChannel = minChannel;
-    }
-
-    public int getMaxVolume() {
-        return maxVolume;
-    }
-
-    public void setMaxVolume(int maxVolume) {
-        this.maxVolume = maxVolume;
-    }
-
-    public int getMinVolume() {
-        return minVolume;
-    }
-
-    public void setMinVolume(int minVolume) {
-        this.minVolume = minVolume;
     }
 }

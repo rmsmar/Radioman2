@@ -2,9 +2,10 @@ package ru.netology.Radioman;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 class RadioTest {
+
     Radio radio = new Radio(10);
 
     @Test
@@ -23,30 +24,30 @@ class RadioTest {
 
     @Test
     public void decreaseCurrentChannel() {
-        radio.setCurrentChannel(0);
-        radio.decreaseCurrentChannel();
-        assertEquals(10, radio.getCurrentChannel());
+        radio.setCurrentStation(0);
+        radio.decreaseCurrentStation();
+        assertEquals(10, radio.getCurrentStation());
     }
 
     @Test
     public void decreaseCurrentChannelDown() {
-        radio.setCurrentChannel(5);
-        radio.decreaseCurrentChannel();
-        assertEquals(4, radio.getCurrentChannel());
+        radio.setCurrentStation(5);
+        radio.decreaseCurrentStation();
+        assertEquals(4, radio.getCurrentStation());
     }
 
     @Test
     public void increaseCurrentChannel() {
-        radio.setCurrentChannel(10);
-        radio.increaseCurrentChannel();
-        assertEquals(0, radio.getCurrentChannel());
+        radio.setCurrentStation(10);
+        radio.increaseCurrentStation();
+        assertEquals(0, radio.getCurrentStation());
     }
 
     @Test
     public void increaseCurrentChannelUp() {
-        radio.setCurrentChannel(5);
-        radio.increaseCurrentChannel();
-        assertEquals(6, radio.getCurrentChannel());
+        radio.setCurrentStation(5);
+        radio.increaseCurrentStation();
+        assertEquals(6, radio.getCurrentStation());
     }
 
     @Test
